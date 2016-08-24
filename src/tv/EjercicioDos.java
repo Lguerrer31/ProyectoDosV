@@ -28,10 +28,67 @@ public class EjercicioDos extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        txtL = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        cmdB = new javax.swing.JButton();
+        cmdC = new javax.swing.JButton();
+        cmdL = new javax.swing.JButton();
+        cmdM = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtR = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Longitud del vector", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 0, 12))); // NOI18N
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtL.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jPanel2.add(txtL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 60, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 120, 80));
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Botones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 0, 12))); // NOI18N
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        cmdB.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        cmdB.setText("Borrar");
+        jPanel3.add(cmdB, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
+
+        cmdC.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        cmdC.setText("Crear");
+        jPanel3.add(cmdC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
+        cmdL.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        cmdL.setText("Llenar");
+        cmdL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdLActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmdL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+
+        cmdM.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        cmdM.setText("Mostrar");
+        jPanel3.add(cmdM, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 130, 210));
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Resultado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 0, 12))); // NOI18N
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtR.setEditable(false);
+        txtR.setColumns(20);
+        txtR.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtR.setRows(5);
+        jScrollPane1.setViewportView(txtR);
+
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 27, 139, -1));
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 160, 130));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -45,7 +102,12 @@ public class EjercicioDos extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmdLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmdLActionPerformed
 
     /**
      * @param args the command line arguments
@@ -83,6 +145,16 @@ public class EjercicioDos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdB;
+    private javax.swing.JButton cmdC;
+    private javax.swing.JButton cmdL;
+    private javax.swing.JButton cmdM;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField txtL;
+    private javax.swing.JTextArea txtR;
     // End of variables declaration//GEN-END:variables
 }
