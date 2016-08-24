@@ -5,6 +5,8 @@
  */
 package tv;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author coste
@@ -14,8 +16,14 @@ public class EjercicioDos extends javax.swing.JFrame {
     /**
      * Creates new form EjercicioDos
      */
+    double v[];
+    
     public EjercicioDos() {
         initComponents();
+        cmdB.setEnabled(false);
+        cmdM.setEnabled(false);
+        cmdL.setEnabled(false);
+        cmdC.setEnabled(true);
     }
 
     /**
@@ -47,6 +55,11 @@ public class EjercicioDos extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtL.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtL.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtLKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 60, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 120, 80));
@@ -56,10 +69,20 @@ public class EjercicioDos extends javax.swing.JFrame {
 
         cmdB.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         cmdB.setText("Borrar");
+        cmdB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdBActionPerformed(evt);
+            }
+        });
         jPanel3.add(cmdB, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
         cmdC.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         cmdC.setText("Crear");
+        cmdC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCActionPerformed(evt);
+            }
+        });
         jPanel3.add(cmdC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
 
         cmdL.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
@@ -73,6 +96,11 @@ public class EjercicioDos extends javax.swing.JFrame {
 
         cmdM.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         cmdM.setText("Mostrar");
+        cmdM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdMActionPerformed(evt);
+            }
+        });
         jPanel3.add(cmdM, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 130, 210));
@@ -107,7 +135,83 @@ public class EjercicioDos extends javax.swing.JFrame {
 
     private void cmdLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLActionPerformed
         // TODO add your handling code here:
+        txtL.setEditable(false);
+        cmdC.setEnabled(false);
+        cmdL.setEnabled(false);
+        cmdM.setEnabled(true);
     }//GEN-LAST:event_cmdLActionPerformed
+
+    private void cmdBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBActionPerformed
+        // TODO add your handling code here:
+        txtL.setText("");
+        txtR.setText("");
+        v = null;
+        txtL.requestFocusInWindow();
+        txtL.setEditable(true);
+        cmdL.setEnabled(false);
+        cmdM.setEnabled(false);
+        cmdC.setEnabled(true);
+    }//GEN-LAST:event_cmdBActionPerformed
+
+    private void cmdCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCActionPerformed
+        // TODO add your handling code here:
+        int longitud;
+        txtR.setText("");
+        if (txtL.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Digite la longitud del vector", "Error", JOptionPane.ERROR_MESSAGE);
+            txtL.requestFocusInWindow();
+        } else if (txtL.getText().trim().equalsIgnoreCase("0")) {
+            JOptionPane.showMessageDialog(this, "La longitud debe ser mayor que cero", "Error", JOptionPane.ERROR_MESSAGE);
+            txtL.requestFocusInWindow();
+        } else {
+            longitud = Integer.parseInt(txtL.getText());
+            v = new double[longitud];
+            longitud = Integer.parseInt(txtL.getText());
+            v = new double[longitud];
+            
+            JOptionPane.showMessageDialog(this, "Vector creado satisfactoriamente");
+            txtL.setEditable(false);
+            
+            cmdB.setEnabled(false);
+            cmdC.setEnabled(false);
+            cmdL.setEnabled(true);
+            cmdM.setEnabled(false);
+        }
+    }//GEN-LAST:event_cmdCActionPerformed
+
+    private void cmdMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMActionPerformed
+        // TODO add your handling code here:
+        double cont = 0, cont1 = 0, cont2 = 0;
+        for (int i = 0; i < v.length; i++) {
+            if (v[i] % 2 == 0) {
+                cont = cont + 1;
+            } else {
+                cont1 = cont1 + 1;
+            }
+            if () {
+                cont2 = cont2 + 1;
+            }
+            txtR.append("" + v[i] + "\n");
+            txtR.append("Cantidad de pares" + cont);
+            txtR.append("Cantidad de impares" + cont1);
+            txtR.append("Cantidad de primos" + cont2);
+        }
+        txtL.setEditable(false);
+        cmdC.setEnabled(false);
+        cmdL.setEnabled(false);
+        cmdM.setEnabled(false);
+    }//GEN-LAST:event_cmdMActionPerformed
+
+    private void txtLKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtLKeyTyped
 
     /**
      * @param args the command line arguments
