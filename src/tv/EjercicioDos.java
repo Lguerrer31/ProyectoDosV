@@ -53,7 +53,7 @@ public class EjercicioDos extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Longitud del vector", 0, 0, new java.awt.Font("Times New Roman", 0, 12))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Longitud del vector", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 0, 12))); // NOI18N
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtL.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
@@ -66,7 +66,7 @@ public class EjercicioDos extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 120, 80));
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Botones", 0, 0, new java.awt.Font("Times New Roman", 0, 12))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Botones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 0, 12))); // NOI18N
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cmdB.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
@@ -88,13 +88,13 @@ public class EjercicioDos extends javax.swing.JFrame {
         jPanel3.add(cmdC, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, -1, -1));
 
         cmdLM.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        cmdLM.setText("Llenar manualmente");
+        cmdLM.setText("Llenar manual");
         cmdLM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdLMActionPerformed(evt);
             }
         });
-        jPanel3.add(cmdLM, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        jPanel3.add(cmdLM, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
 
         cmdM.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         cmdM.setText("Mostrar");
@@ -103,20 +103,20 @@ public class EjercicioDos extends javax.swing.JFrame {
                 cmdMActionPerformed(evt);
             }
         });
-        jPanel3.add(cmdM, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, -1));
+        jPanel3.add(cmdM, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
         cmdLA.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        cmdLA.setText("Llenar automaticamente");
+        cmdLA.setText("Llenar automatico");
         cmdLA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdLAActionPerformed(evt);
             }
         });
-        jPanel3.add(cmdLA, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
+        jPanel3.add(cmdLA, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 180, 210));
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Resultado", 0, 0, new java.awt.Font("Times New Roman", 0, 12))); // NOI18N
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Resultado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 0, 12))); // NOI18N
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtR.setEditable(false);
