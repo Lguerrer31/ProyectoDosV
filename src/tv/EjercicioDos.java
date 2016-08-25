@@ -17,7 +17,7 @@ public class EjercicioDos extends javax.swing.JFrame {
      * Creates new form EjercicioDos
      */
     double v[];
-    double par, imp, prim;
+    double p, i, pr;
 
     public EjercicioDos() {
         initComponents();
@@ -148,16 +148,16 @@ public class EjercicioDos extends javax.swing.JFrame {
         // TODO add your handling code here:
         double n;
         
-        par = 0;
-        prim = 0;
-        imp = 0;
+        p = 0;
+        pr = 0;
+        i = 0;
         for (int i = 0; i < v.length; i++) {
             n = Double.parseDouble(JOptionPane.showInputDialog(this, "Digite el elemento en la posición " + i));
             v[i] = n;
             if (v[i] % 2 == 0) {
-                par++;
+                p++;
             } else {
-                imp++;
+                i++;
             }
             int cont = 0;
             for (int j = 1; j <= v[i]; j++) {
@@ -166,7 +166,7 @@ public class EjercicioDos extends javax.swing.JFrame {
                 }
             }
             if(cont == 2){
-                prim++;
+                pr++;
             }
         }
         txtL.setEditable(false);
@@ -221,9 +221,9 @@ public class EjercicioDos extends javax.swing.JFrame {
         for (int i = 0; i < v.length; i++) {
             txtR.append("" + v[i] + "\n");
         }
-        txtR.append("Cantidad de pares " +par + "\n");
-        txtR.append("Cantidad de impares " + imp + "\n");
-        txtR.append("Cantidad de primos " + prim + "\n");
+        txtR.append("Cantidad de pares " + p + "\n");
+        txtR.append("Cantidad de impares " + i + "\n");
+        txtR.append("Cantidad de primos " + pr + "\n");
         txtL.setEditable(false);
         cmdC.setEnabled(false);
         cmdLM.setEnabled(false);
@@ -244,17 +244,17 @@ public class EjercicioDos extends javax.swing.JFrame {
     private void cmdLAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLAActionPerformed
         // TODO add your handling code here:
         double n;
-        par = 0;
-        prim = 0;
-        imp = 0;
+        p = 0;
+        pr = 0;
+        i = 0;
         
         for (int i = 0; i < v.length; i++) {
             n = (int) (Math.random() * 15 + 1);
             v[i] = n;
                  if (v[i] % 2 == 0) {
-                par++;
+                p++;
             } else {
-                imp++;
+                i++;
             }
             int cont = 0;
             for (int j = 1; j <= v[i]; j++) {
@@ -263,7 +263,7 @@ public class EjercicioDos extends javax.swing.JFrame {
                 }
             }
             if(cont == 2){
-                prim++;
+                pr++;
             }
         }
         JOptionPane.showMessageDialog(this, "Vector llenado satisfactoriamente");
