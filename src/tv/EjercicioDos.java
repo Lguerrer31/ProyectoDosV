@@ -17,13 +17,13 @@ public class EjercicioDos extends javax.swing.JFrame {
      * Creates new form EjercicioDos
      */
     double v[];
-    
+
     public EjercicioDos() {
         initComponents();
-        cmdB.setEnabled(false);
+        txtL.requestFocusInWindow();
+        cmdLM.setEnabled(false);
+        cmdLA.setEnabled(false);
         cmdM.setEnabled(false);
-        cmdL.setEnabled(false);
-        cmdC.setEnabled(true);
     }
 
     /**
@@ -41,8 +41,9 @@ public class EjercicioDos extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         cmdB = new javax.swing.JButton();
         cmdC = new javax.swing.JButton();
-        cmdL = new javax.swing.JButton();
+        cmdLM = new javax.swing.JButton();
         cmdM = new javax.swing.JButton();
+        cmdLA = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtR = new javax.swing.JTextArea();
@@ -51,7 +52,7 @@ public class EjercicioDos extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Longitud del vector", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 0, 12))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Longitud del vector", 0, 0, new java.awt.Font("Times New Roman", 0, 12))); // NOI18N
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtL.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
@@ -64,7 +65,7 @@ public class EjercicioDos extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 120, 80));
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Botones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 0, 12))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Botones", 0, 0, new java.awt.Font("Times New Roman", 0, 12))); // NOI18N
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cmdB.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
@@ -74,7 +75,7 @@ public class EjercicioDos extends javax.swing.JFrame {
                 cmdBActionPerformed(evt);
             }
         });
-        jPanel3.add(cmdB, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
+        jPanel3.add(cmdB, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
 
         cmdC.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         cmdC.setText("Crear");
@@ -83,16 +84,16 @@ public class EjercicioDos extends javax.swing.JFrame {
                 cmdCActionPerformed(evt);
             }
         });
-        jPanel3.add(cmdC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        jPanel3.add(cmdC, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, -1, -1));
 
-        cmdL.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        cmdL.setText("Llenar");
-        cmdL.addActionListener(new java.awt.event.ActionListener() {
+        cmdLM.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        cmdLM.setText("Llenar manualmente");
+        cmdLM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdLActionPerformed(evt);
+                cmdLMActionPerformed(evt);
             }
         });
-        jPanel3.add(cmdL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+        jPanel3.add(cmdLM, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
         cmdM.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         cmdM.setText("Mostrar");
@@ -101,11 +102,20 @@ public class EjercicioDos extends javax.swing.JFrame {
                 cmdMActionPerformed(evt);
             }
         });
-        jPanel3.add(cmdM, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+        jPanel3.add(cmdM, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, -1));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 130, 210));
+        cmdLA.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        cmdLA.setText("Llenar automaticamente");
+        cmdLA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdLAActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmdLA, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Resultado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 0, 12))); // NOI18N
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 180, 210));
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Resultado", 0, 0, new java.awt.Font("Times New Roman", 0, 12))); // NOI18N
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtR.setEditable(false);
@@ -122,7 +132,7 @@ public class EjercicioDos extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,13 +143,20 @@ public class EjercicioDos extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cmdLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLActionPerformed
+    private void cmdLMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLMActionPerformed
         // TODO add your handling code here:
+        double n;
+        for (int i = 0; i < v.length; i++) {
+            n = Double.parseDouble(JOptionPane.showInputDialog(this, "Digite el elemento en la posición " + i));
+            v[i] = n;
+        }
         txtL.setEditable(false);
         cmdC.setEnabled(false);
-        cmdL.setEnabled(false);
+        cmdLA.setEnabled(false);
+        cmdLM.setEnabled(false);
         cmdM.setEnabled(true);
-    }//GEN-LAST:event_cmdLActionPerformed
+
+    }//GEN-LAST:event_cmdLMActionPerformed
 
     private void cmdBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBActionPerformed
         // TODO add your handling code here:
@@ -148,7 +165,8 @@ public class EjercicioDos extends javax.swing.JFrame {
         v = null;
         txtL.requestFocusInWindow();
         txtL.setEditable(true);
-        cmdL.setEnabled(false);
+        cmdLM.setEnabled(false);
+        cmdLA.setEnabled(false);
         cmdM.setEnabled(false);
         cmdC.setEnabled(true);
     }//GEN-LAST:event_cmdBActionPerformed
@@ -168,13 +186,13 @@ public class EjercicioDos extends javax.swing.JFrame {
             v = new double[longitud];
             longitud = Integer.parseInt(txtL.getText());
             v = new double[longitud];
-            
+
             JOptionPane.showMessageDialog(this, "Vector creado satisfactoriamente");
             txtL.setEditable(false);
-            
-            cmdB.setEnabled(false);
+
             cmdC.setEnabled(false);
-            cmdL.setEnabled(true);
+            cmdLA.setEnabled(true);
+            cmdLM.setEnabled(true);
             cmdM.setEnabled(false);
         }
     }//GEN-LAST:event_cmdCActionPerformed
@@ -185,7 +203,7 @@ public class EjercicioDos extends javax.swing.JFrame {
         for (int i = 0; i < v.length; i++) {
             if (v[i] % 2 == 0) {
                 cont = cont + 1;
-            } else {
+            } else if (v[i] % 2 == 1) {
                 cont1 = cont1 + 1;
             }
             if () {
@@ -198,7 +216,7 @@ public class EjercicioDos extends javax.swing.JFrame {
         }
         txtL.setEditable(false);
         cmdC.setEnabled(false);
-        cmdL.setEnabled(false);
+        cmdLM.setEnabled(false);
         cmdM.setEnabled(false);
     }//GEN-LAST:event_cmdMActionPerformed
 
@@ -212,6 +230,21 @@ public class EjercicioDos extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_txtLKeyTyped
+
+    private void cmdLAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLAActionPerformed
+        // TODO add your handling code here:
+        double n;
+        for (int i = 0; i < v.length; i++) {
+            n = (int) (Math.random() * 15 + 1);
+            v[i] = n;
+        }
+        JOptionPane.showMessageDialog(this, "Vector llenado satisfactoriamente");
+        cmdC.setEnabled(false);
+        cmdLA.setEnabled(false);
+        cmdLM.setEnabled(false);
+        cmdM.setEnabled(true);
+        txtL.setEditable(false);
+    }//GEN-LAST:event_cmdLAActionPerformed
 
     /**
      * @param args the command line arguments
@@ -251,7 +284,8 @@ public class EjercicioDos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cmdB;
     private javax.swing.JButton cmdC;
-    private javax.swing.JButton cmdL;
+    private javax.swing.JButton cmdLA;
+    private javax.swing.JButton cmdLM;
     private javax.swing.JButton cmdM;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
